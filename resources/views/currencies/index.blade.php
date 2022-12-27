@@ -5,7 +5,7 @@
         <head>
             <tr>
                 <th>Waluta</th>
-                <th>Kurs</th>
+                <th>Kurs (waluta/PLN)</th>
             </tr>
         </head>
         <body>

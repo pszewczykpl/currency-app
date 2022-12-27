@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 /**
+ * Redirect to the /currencies from the home page.
+ */
+Route::redirect('/', '/currencies');
+
+/**
  * Fetch currencies from the API and save them to the database.
  */
 Route::get('/currencies/fetch', [CurrencyController::class, 'fetch'])->name('currencies.fetch');
