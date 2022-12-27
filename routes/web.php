@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CurrencyController;
+use App\Services\CurrencyApiService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    (new CurrencyApiService())->fetchAndSaveCurrencies();
+    echo 'Pobrano dane z API i zapisano do bazy danych.';
 });
