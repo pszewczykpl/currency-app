@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    (new CurrencyApiService())->fetchAndSaveCurrencies();
-    echo 'Pobrano dane z API i zapisano do bazy danych.';
-});
+/**
+ * Fetch currencies from the API and save them to the database.
+ */
+Route::get('/currencies/fetch', [CurrencyController::class, 'fetch'])->name('currencies.fetch');
+
+/**
+ * Show all currencies from the database.
+ */
+Route::get('/currencies', [CurrencyController::class, 'index'])->name('currencies.index');
