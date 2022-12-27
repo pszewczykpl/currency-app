@@ -1,12 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "pszewczykpl/currency-app",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Aplikacja do pobierania i przechowywania danych dot. kursów walut z wykorzystaniem NBP API.",
+    "keywords": ["nbp", "currency", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.2",
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7"
