@@ -3,11 +3,11 @@
 Currency App to aplikacja do pobierania i przechowywania danych dot. kursów walut z wykorzystaniem NBP API.
 
 Aplikacja posiada:
-- Widoki /currencies oraz /currencies/fetch
 - Migrację do stworzenia tabeli currencies
-- Model Currency
+- Model/Encję Currency (z polami id, name, currency_code, exchange_rate)
 - CurrencyApiService (który wykorzystywany jest w celu połączenia z API NBP, pobierania danych i zapisywania ich w bazie danych)
-- CurrencyController, który udostępnia /currencies (podgląd danych z bazy) oraz /currencies/fetch (pobranie danych z API NBP)
+- Kontroler oraz widoki, który udostępnia /currencies (podgląd danych z bazy) oraz /currencies/fetch (pobranie danych z API NBP)
+- Komendę update:currencies uruchamianą codziennie w celu automatycznej aktualizacji danych w bazie danych.
 ## Technologie
 - PHP 8.2
 - Laravel 9
