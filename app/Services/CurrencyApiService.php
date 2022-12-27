@@ -5,6 +5,8 @@ namespace App\Services;
 use App\Models\Currency;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CurrencyApiService
 {
@@ -56,6 +58,9 @@ class CurrencyApiService
      */
     protected function saveCurrencies(array $currencies): void
     {
+        // Start a database transaction.
+        DB::beginTransaction();
+
         // Try to save currencies to the database.
         try {
             foreach ($currencies as $currency) {
@@ -66,7 +71,13 @@ class CurrencyApiService
                     'exchange_rate' => $currency['mid'],
                 ]);
             }
+
+            // Commit the transaction if everything ok.
+            DB::commit();
         } catch (\Exception $e) {
+            // Rollback the transaction if something went wrong.
+            DB::rollback();
+
             // General 500 error if something went wrong.
             abort(500);
         }
