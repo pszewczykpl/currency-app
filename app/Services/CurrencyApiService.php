@@ -93,5 +93,7 @@ class CurrencyApiService
     {
         $currencies = $this->fetchCurrenciesFromApi();
         $this->saveCurrencies($currencies);
+
+        Log::info('Currencies fetched from the API and saved to the database.');
     }
 }
